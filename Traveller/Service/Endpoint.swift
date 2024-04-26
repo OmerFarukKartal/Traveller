@@ -27,6 +27,9 @@ enum HTTPMethod: String {
 
 enum Endpoint {
     case getAirLineList
+    case register(username: String, password: String, name: String, surname: String, email: String)
+    case getPopularFlights
+    case getPopulerHotels
 }
 
 extension Endpoint: EndpointProtocol {
@@ -37,12 +40,18 @@ extension Endpoint: EndpointProtocol {
     var path: String {
         switch self {
         case .getAirLineList: return "/Airline/AirlineList"
+            
+        case .register:     return "/Registers/CreateUser"
+        case .getPopularFlights:    return "/Flights/GetFeaturedFlights"
+        case .getPopulerHotels:     return "/Hotels/Get5Hotel"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getAirLineList:   return .get
+        case .getAirLineList, .getPopularFlights, .getPopulerHotels:     return .get
+        case .register:     return .post
+
         }
     }
     
@@ -52,7 +61,15 @@ extension Endpoint: EndpointProtocol {
     
     var parameters: [String : Any]? {
         switch self {
-        case .getAirLineList:   return nil
+        case .getAirLineList, .getPopularFlights, .getPopulerHotels:   return nil
+        case .register(let username, let password, let name, let surname, let email):
+            return [
+                "username": username,
+                "password": password,
+                "name": name,
+                "surname": surname,
+                "email": email
+            ]
         }
     }
     

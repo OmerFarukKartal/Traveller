@@ -39,6 +39,7 @@ class NetworkManager {
                 
                 do {
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
+                    print(decodedData)
                     completion(.success(decodedData))
                 } catch {
                     print("JSON decoding error: \(error.localizedDescription)")
@@ -49,5 +50,19 @@ class NetworkManager {
         
         task.resume()
     }
+        
+    func register(username: String, password: String, name: String, surname: String ,email: String, completion: @escaping(Result<RegisterResponse,Error>) -> Void) {
+        let endpoint = Endpoint.register(username: username, password: password, name: name, surname: surname,email: email )
+        request(endpoint, completion: completion)
+    }
     
+    func getPopularFlights(completion: @escaping(Result<[PopularFlights], Error>) -> Void) {
+        let endpoint = Endpoint.getPopularFlights
+        request(endpoint, completion: completion)
+    }
+    
+    func getPopulerHotels(completion: @escaping(Result<[PopularHotels], Error>) -> Void) {
+        let endpoint = Endpoint.getPopulerHotels
+        request(endpoint, completion: completion)
+    }
 }

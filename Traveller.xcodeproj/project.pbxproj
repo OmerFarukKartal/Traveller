@@ -7,23 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930F869C2BE396FD00A32F12 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F869B2BE396FD00A32F12 /* UIView+Ext.swift */; };
+		9348ACC22BD9F6B6003CF57D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9348ACC12BD9F6B6003CF57D /* Kingfisher */; };
 		93509AD22BA86DF300327EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AD12BA86DF300327EAF /* AppDelegate.swift */; };
 		93509AD42BA86DF300327EAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AD32BA86DF300327EAF /* SceneDelegate.swift */; };
-		93509AD62BA86DF300327EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AD52BA86DF300327EAF /* ViewController.swift */; };
 		93509AD92BA86DF300327EAF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 93509AD82BA86DF300327EAF /* Base */; };
 		93509ADB2BA86DF500327EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93509ADA2BA86DF500327EAF /* Assets.xcassets */; };
 		93509ADE2BA86DF500327EAF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 93509ADD2BA86DF500327EAF /* Base */; };
+		93509AE62BA86E7000327EAF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AE52BA86E7000327EAF /* NetworkManager.swift */; };
+		93509AE82BA86E7600327EAF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AE72BA86E7600327EAF /* Endpoint.swift */; };
+		93509AEB2BA8A48B00327EAF /* FlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AEA2BA8A48B00327EAF /* FlightViewController.swift */; };
+		93509AEE2BA8A4B100327EAF /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AED2BA8A4B100327EAF /* HomePageViewModel.swift */; };
+		93509AF12BA8A4F500327EAF /* PopulerFlightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AF02BA8A4F500327EAF /* PopulerFlightsModel.swift */; };
+		93509AF42BB0EF2800327EAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AF32BB0EF2800327EAF /* LoginViewController.swift */; };
+		93509AF62BB0F5BB00327EAF /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AF52BB0F5BB00327EAF /* LoginModel.swift */; };
+		93509AF82BB0F60700327EAF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AF72BB0F60700327EAF /* APIService.swift */; };
+		93509AFA2BB0F63F00327EAF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93509AF92BB0F63F00327EAF /* LoginViewModel.swift */; };
+		938DF3F82BDFBBE400DC0C79 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938DF3F72BDFBBE400DC0C79 /* TabBarController.swift */; };
+		938DF3FA2BDFBD2200DC0C79 /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938DF3F92BDFBD2200DC0C79 /* TourViewController.swift */; };
+		938DF3FC2BE1238400DC0C79 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938DF3FB2BE1238400DC0C79 /* ProfileViewController.swift */; };
+		938DF3FE2BE123AA00DC0C79 /* HotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938DF3FD2BE123AA00DC0C79 /* HotelViewController.swift */; };
+		939E920D2BB218B700A9369B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939E920C2BB218B700A9369B /* RegisterViewController.swift */; };
+		93A078182BEFD1E000678718 /* HotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A078172BEFD1E000678718 /* HotelTableViewCell.swift */; };
+		93A0781A2BF1231300678718 /* PopulerHotelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A078192BF1231300678718 /* PopulerHotelsModel.swift */; };
+		93AE66772BBC29E0003925AF /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AE66762BBC29E0003925AF /* RegisterModel.swift */; };
+		93D60E3C2BC5D8010069221A /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D60E3B2BC5D8010069221A /* FlightTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930F869B2BE396FD00A32F12 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		93509ACE2BA86DF300327EAF /* Traveller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93509AD12BA86DF300327EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93509AD32BA86DF300327EAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		93509AD52BA86DF300327EAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		93509AD82BA86DF300327EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93509ADA2BA86DF500327EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93509ADD2BA86DF500327EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93509ADF2BA86DF500327EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93509AE52BA86E7000327EAF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		93509AE72BA86E7600327EAF /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		93509AEA2BA8A48B00327EAF /* FlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewController.swift; sourceTree = "<group>"; };
+		93509AED2BA8A4B100327EAF /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
+		93509AF02BA8A4F500327EAF /* PopulerFlightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulerFlightsModel.swift; sourceTree = "<group>"; };
+		93509AF32BB0EF2800327EAF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		93509AF52BB0F5BB00327EAF /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		93509AF72BB0F60700327EAF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		93509AF92BB0F63F00327EAF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		938DF3F72BDFBBE400DC0C79 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		938DF3F92BDFBD2200DC0C79 /* TourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
+		938DF3FB2BE1238400DC0C79 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		938DF3FD2BE123AA00DC0C79 /* HotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewController.swift; sourceTree = "<group>"; };
+		939E920C2BB218B700A9369B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		93A078172BEFD1E000678718 /* HotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelTableViewCell.swift; sourceTree = "<group>"; };
+		93A078192BF1231300678718 /* PopulerHotelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulerHotelsModel.swift; sourceTree = "<group>"; };
+		93AE66762BBC29E0003925AF /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		93D60E3B2BC5D8010069221A /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +68,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9348ACC22BD9F6B6003CF57D /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930F869A2BE396AD00A32F12 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				930F869B2BE396FD00A32F12 /* UIView+Ext.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
 		93509AC52BA86DF300327EAF = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +104,63 @@
 			children = (
 				93509AD12BA86DF300327EAF /* AppDelegate.swift */,
 				93509AD32BA86DF300327EAF /* SceneDelegate.swift */,
-				93509AD52BA86DF300327EAF /* ViewController.swift */,
+				930F869A2BE396AD00A32F12 /* Extention */,
+				93509AF22BA8A4FA00327EAF /* Model */,
+				93509AEC2BA8A49800327EAF /* View */,
+				93509AEF2BA8A4C000327EAF /* ViewModel */,
+				93509AE92BA8A43A00327EAF /* Service */,
 				93509AD72BA86DF300327EAF /* Main.storyboard */,
 				93509ADA2BA86DF500327EAF /* Assets.xcassets */,
 				93509ADC2BA86DF500327EAF /* LaunchScreen.storyboard */,
 				93509ADF2BA86DF500327EAF /* Info.plist */,
 			);
 			path = Traveller;
+			sourceTree = "<group>";
+		};
+		93509AE92BA8A43A00327EAF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				93509AE72BA86E7600327EAF /* Endpoint.swift */,
+				93509AE52BA86E7000327EAF /* NetworkManager.swift */,
+				93509AF72BB0F60700327EAF /* APIService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		93509AEC2BA8A49800327EAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				938DF3F72BDFBBE400DC0C79 /* TabBarController.swift */,
+				93509AEA2BA8A48B00327EAF /* FlightViewController.swift */,
+				93D60E3B2BC5D8010069221A /* FlightTableViewCell.swift */,
+				938DF3FD2BE123AA00DC0C79 /* HotelViewController.swift */,
+				93A078172BEFD1E000678718 /* HotelTableViewCell.swift */,
+				938DF3F92BDFBD2200DC0C79 /* TourViewController.swift */,
+				938DF3FB2BE1238400DC0C79 /* ProfileViewController.swift */,
+				93509AF32BB0EF2800327EAF /* LoginViewController.swift */,
+				939E920C2BB218B700A9369B /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93509AEF2BA8A4C000327EAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				93509AED2BA8A4B100327EAF /* HomePageViewModel.swift */,
+				93509AF92BB0F63F00327EAF /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		93509AF22BA8A4FA00327EAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93509AF02BA8A4F500327EAF /* PopulerFlightsModel.swift */,
+				93A078192BF1231300678718 /* PopulerHotelsModel.swift */,
+				93509AF52BB0F5BB00327EAF /* LoginModel.swift */,
+				93AE66762BBC29E0003925AF /* RegisterModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +179,9 @@
 			dependencies = (
 			);
 			name = Traveller;
+			packageProductDependencies = (
+				9348ACC12BD9F6B6003CF57D /* Kingfisher */,
+			);
 			productName = Traveller;
 			productReference = 93509ACE2BA86DF300327EAF /* Traveller.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +210,9 @@
 				Base,
 			);
 			mainGroup = 93509AC52BA86DF300327EAF;
+			packageReferences = (
+				9348ACC02BD9F6B6003CF57D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 93509ACF2BA86DF300327EAF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +240,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93509AD62BA86DF300327EAF /* ViewController.swift in Sources */,
+				93509AE62BA86E7000327EAF /* NetworkManager.swift in Sources */,
+				938DF3FE2BE123AA00DC0C79 /* HotelViewController.swift in Sources */,
+				93509AEE2BA8A4B100327EAF /* HomePageViewModel.swift in Sources */,
+				93A0781A2BF1231300678718 /* PopulerHotelsModel.swift in Sources */,
+				93509AFA2BB0F63F00327EAF /* LoginViewModel.swift in Sources */,
+				938DF3F82BDFBBE400DC0C79 /* TabBarController.swift in Sources */,
+				93AE66772BBC29E0003925AF /* RegisterModel.swift in Sources */,
+				930F869C2BE396FD00A32F12 /* UIView+Ext.swift in Sources */,
+				939E920D2BB218B700A9369B /* RegisterViewController.swift in Sources */,
+				93509AEB2BA8A48B00327EAF /* FlightViewController.swift in Sources */,
+				93D60E3C2BC5D8010069221A /* FlightTableViewCell.swift in Sources */,
 				93509AD22BA86DF300327EAF /* AppDelegate.swift in Sources */,
+				93509AF62BB0F5BB00327EAF /* LoginModel.swift in Sources */,
+				93509AF42BB0EF2800327EAF /* LoginViewController.swift in Sources */,
 				93509AD42BA86DF300327EAF /* SceneDelegate.swift in Sources */,
+				93A078182BEFD1E000678718 /* HotelTableViewCell.swift in Sources */,
+				938DF3FA2BDFBD2200DC0C79 /* TourViewController.swift in Sources */,
+				93509AF12BA8A4F500327EAF /* PopulerFlightsModel.swift in Sources */,
+				93509AE82BA86E7600327EAF /* Endpoint.swift in Sources */,
+				93509AF82BB0F60700327EAF /* APIService.swift in Sources */,
+				938DF3FC2BE1238400DC0C79 /* ProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -297,9 +417,9 @@
 				INFOPLIST_FILE = Traveller/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,9 +445,9 @@
 				INFOPLIST_FILE = Traveller/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +483,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9348ACC02BD9F6B6003CF57D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9348ACC12BD9F6B6003CF57D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9348ACC02BD9F6B6003CF57D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 93509AC62BA86DF300327EAF /* Project object */;
 }

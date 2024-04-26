@@ -114,8 +114,8 @@ class LoginViewController: UIViewController {
                 
                 
                 DispatchQueue.main.async {
-                    let homePageViewController = HomePageViewController()
-                    self.navigationController?.pushViewController(homePageViewController, animated: true)
+                    let flightVC = FlightViewController()
+                    self.navigationController?.pushViewController(flightVC, animated: true)
                 }
             case .failure(let error):
                 print("Login failed. Error: \(error)")
