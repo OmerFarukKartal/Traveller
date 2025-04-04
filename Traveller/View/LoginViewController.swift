@@ -9,11 +9,13 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    
     // MARK: - UI Elements
     
+    let screenHeight = UIScreen.main.bounds.height
+    let screenWidth = UIScreen.main.bounds.width
+    
     let logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "Traveller"))
+        let imageView = UIImageView(image: UIImage(named: "traveller"))
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -38,9 +40,25 @@ class LoginViewController: UIViewController {
     
     let loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Giriş Yap", for: .normal)
+        button.setTitle("    Giriş Yap    ", for: .normal)
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .white
+        button.backgroundColor = .red
+        button.setTitleColor(.white, for: .normal) // Yazı rengini beyaz yap
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16) // Yazı tipini bold yap
+        return button
+    }()
+    
+    let registerButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("    Kayıt Ol    ", for: .normal)
+        button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .white
+        button.backgroundColor = .red
+        button.setTitleColor(.white, for: .normal) // Yazı rengini beyaz yap
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16) // Yazı tipini bold yap
         return button
     }()
     
@@ -51,57 +69,47 @@ class LoginViewController: UIViewController {
         setupUI()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        
-        view.addGestureRecognizer(tapGesture)
+                view.addGestureRecognizer(tapGesture)
     }
+    
     @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
+            view.endEditing(true)
+        }
     
     // MARK: - UI Setup
     
     private func setupUI() {
+        view.backgroundColor = UIColor.white
         
-        view.backgroundColor = UIColor.red
-        
-        let logoWidth = view.frame.width * 0.6
-        let logoHeight = view.frame.height * 0.2
-        
-        logoImageView.widthAnchor.constraint(equalToConstant: logoWidth).isActive = true
-        logoImageView.heightAnchor.constraint(equalToConstant: logoHeight).isActive = true
-        
-        
+        let backgroundView = UIView()
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.backgroundColor = .red
+        view.addSubview(backgroundView)
+        view.addSubview(logoImageView)
+        backgroundView.anchor(top: view.topAnchor, left: view.safeAreaLayoutGuide.leftAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: 0,paddingLeft: 0, paddingRight: 0, height: screenHeight * 0.3)
+        logoImageView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.safeAreaLayoutGuide.leftAnchor, paddingTop: screenHeight * 0.1, paddingLeft: screenWidth * 0.1, width: screenWidth * 0.8, height: screenHeight * 0.3)
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.spacing = 20
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(stackView)
-        
-        stackView.addArrangedSubview(logoImageView)
         stackView.addArrangedSubview(usernameTextField)
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(loginButton)
-        
-        
-        // LogoImageView için içerik modunu belirle (aspect fit)
+        stackView.addArrangedSubview(registerButton)
         logoImageView.contentMode = .scaleAspectFill
         
-        let textFieldWidth = view.frame.width * 0.6
-        usernameTextField.widthAnchor.constraint(equalToConstant: textFieldWidth).isActive = true
-        passwordTextField.widthAnchor.constraint(equalTo: usernameTextField.widthAnchor).isActive = true
+        usernameTextField.anchor(top: stackView.topAnchor, left: stackView.leftAnchor, right: stackView.rightAnchor, paddingTop: screenHeight * 0.01, paddingLeft: screenWidth * 0.1, paddingRight: screenWidth * 0.1)
+        passwordTextField.anchor(top: usernameTextField.bottomAnchor, left: stackView.leftAnchor, right: stackView.rightAnchor, paddingTop: screenHeight * 0.01, paddingLeft: screenWidth * 0.1, paddingRight: screenWidth * 0.1)
+        loginButton.anchor(top: passwordTextField.bottomAnchor, left: stackView.leftAnchor, right: stackView.rightAnchor, paddingTop: screenHeight * 0.01, paddingLeft: screenWidth * 0.1, paddingRight: screenWidth * 0.1)
+        registerButton.anchor(top: loginButton.bottomAnchor, left: stackView.leftAnchor, right: stackView.rightAnchor, paddingTop: screenHeight * 0.01, paddingLeft: screenWidth * 0.1, paddingRight: screenWidth * 0.1)
         
-        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
-        stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
-        
-        usernameTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.05).isActive = true
-        passwordTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.05).isActive = true
-        loginButton.heightAnchor.constraint(equalToConstant: view.frame.height * 0.05).isActive = true
+        stackView.anchor(top: logoImageView.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor,right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: screenHeight * 0, paddingLeft: screenWidth * 0.1, paddingRight: screenWidth * 0.1)
     }
-    
-    
+
+
+
     
     @objc func loginButtonTapped() {
         guard let username = usernameTextField.text, let password = passwordTextField.text else {
@@ -110,12 +118,23 @@ class LoginViewController: UIViewController {
         APIService.shared.loginUser(username: username, password: password) { result in
             switch result {
             case .success(let loginResponse):
-                print("Login successful. Access Token: \(loginResponse.token ?? "")")
-                
-                
+                if let token = loginResponse.token {
+                    // Token değerini UserDefaults'a kaydet
+                    UserDefaults.standard.set(token, forKey: "accessToken")
+                    print("Login successful. Access Token: \(token)")
+                }
                 DispatchQueue.main.async {
-                    let flightVC = FlightViewController()
-                    self.navigationController?.pushViewController(flightVC, animated: true)
+                    if let tabBarController = self.tabBarController as? TabBarController {
+                        UIView.transition(with: self.view.window!, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                            tabBarController.selectedIndex = 0
+                        }, completion: nil)
+                    } else {
+                        let tabBarController = TabBarController()
+                        tabBarController.selectedIndex = 0
+                        UIView.transition(with: self.view.window!, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                            self.view.window?.rootViewController = tabBarController
+                        }, completion: nil)
+                    }
                 }
             case .failure(let error):
                 print("Login failed. Error: \(error)")
@@ -125,6 +144,14 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    @objc func registerButtonTapped() {
+        let registerVC = RegisterViewController()
+        registerVC.modalPresentationStyle = .fullScreen
+        present(registerVC, animated: true, completion: nil)
+    }
+
+
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Tamam", style: .default, handler: nil)

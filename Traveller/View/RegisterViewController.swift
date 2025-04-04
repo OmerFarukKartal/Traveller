@@ -3,10 +3,13 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    let screenHeight = UIScreen.main.bounds.height
+    let screenWidth = UIScreen.main.bounds.width
+    
     // MARK: - UI Elements
     
     let logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "Traveller"))
+        let imageView = UIImageView(image: UIImage(named: "travellerRegister"))
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -55,12 +58,13 @@ class RegisterViewController: UIViewController {
     
     let registerButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Register", for: .normal)
-        button.backgroundColor = UIColor.white
-        button.tintColor = UIColor.red
+        button.setTitle("Kayıt Ol", for: .normal)
+        button.backgroundColor = UIColor.red
+        button.tintColor = UIColor.white
         button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isEnabled = false // Başlangıçta pasif yap
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16) // Yazı tipini bold yap
         return button
     }()
     
@@ -69,20 +73,29 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
         
-        // Text alanlarının değişikliklerini izle
         usernameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         surnameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+                view.addGestureRecognizer(tapGesture)
     }
+    @objc func hideKeyboard() {
+            view.endEditing(true)
+        }
     
     // MARK: - UI Setup
-    
+ 
     private func setupUI() {
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = .white
+        
+        let bacgroundView = UIView()
+        bacgroundView.translatesAutoresizingMaskIntoConstraints = false
+        bacgroundView.backgroundColor = .red
+        view.addSubview(bacgroundView)
+        bacgroundView.anchor(top: view.topAnchor, left: view.safeAreaLayoutGuide.leftAnchor, right: view.safeAreaLayoutGuide.rightAnchor, height: screenHeight * 0.3)
         
         let logoWidth = view.frame.width * 0.6
         let logoHeight = view.frame.height * 0.2
@@ -106,7 +119,6 @@ class RegisterViewController: UIViewController {
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(registerButton)
         
-        // LogoImageView için içerik modunu belirle (aspect fit)
         logoImageView.contentMode = .scaleAspectFill
         
         let textFieldWidth = view.frame.width * 0.6
@@ -116,37 +128,37 @@ class RegisterViewController: UIViewController {
         surnameTextField.widthAnchor.constraint(equalTo: usernameTextField.widthAnchor).isActive = true
         emailTextField.widthAnchor.constraint(equalTo: usernameTextField.widthAnchor).isActive = true
         
-        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
-        stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
+        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.safeAreaLayoutGuide.leftAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: screenHeight * 0.01, paddingLeft: screenWidth * 0.1, paddingRight: screenWidth * 0.1)
         
-        nameTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.05).isActive = true
-        surnameTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.05).isActive = true
-        emailTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.05).isActive = true
-        usernameTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.05).isActive = true
-        passwordTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.05).isActive = true
-        registerButton.heightAnchor.constraint(equalToConstant: view.frame.height * 0.05).isActive = true
-        registerButton.widthAnchor.constraint(equalTo: usernameTextField.widthAnchor).isActive = true // Butonu text alanlarıyla aynı genişlikte yap
+        nameTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.04).isActive = true
+        surnameTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.04).isActive = true
+        emailTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.04).isActive = true
+        usernameTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.04).isActive = true
+        passwordTextField.heightAnchor.constraint(equalToConstant: view.frame.height * 0.04).isActive = true
+        registerButton.heightAnchor.constraint(equalToConstant: view.frame.height * 0.04).isActive = true
+        registerButton.widthAnchor.constraint(equalTo: usernameTextField.widthAnchor).isActive = true
     }
     
     // MARK: - Actions
     
     @objc func registerButtonTapped() {
-        guard let username = usernameTextField.text, let password = passwordTextField.text, let name = nameTextField.text, let surname = surnameTextField.text, let email = emailTextField.text  else {
+        guard let username = usernameTextField.text, let password = passwordTextField.text, let name = nameTextField.text, let surname = surnameTextField.text, let email = emailTextField.text else {
             return
         }
+        
         NetworkManager.shared.register(username: username, password: password, name: name, surname: surname, email: email) { result in
             switch result {
             case .success(let registerResponse):
                 print("\(registerResponse.message)")
                 DispatchQueue.main.async {
-                    let flightVC = FlightViewController()
-                    self.navigationController?.pushViewController(flightVC, animated: true)
+                    if let tabBarController = self.tabBarController {
+                        tabBarController.selectedIndex = 0
+                    }
                 }
             case .failure(let error):
-                print("Login failed. Error: \(error)")
+                print("Register failed. Error: \(error)")
                 DispatchQueue.main.async {
-                    self.showAlert(title: "Hata", message: "Giriş başarısız. Lütfen kullanıcı adı ve şifrenizi kontrol edin")
+                    self.showAlert(title: "Hata", message: "Kayıt başarısız. Lütfen tekrar deneyin.")
                 }
             }
         }

@@ -11,17 +11,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        // TabBarController'ı oluştur
-        let tabBarController = TabBarController()
+        // LoginViewController'ı oluştur
+        let loginViewController = TabBarController()
+        let navigationController = UINavigationController(rootViewController: loginViewController)
         
-        // TabBarController'ı kök view controller olarak ayarla
-        window?.rootViewController = tabBarController
-        
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 

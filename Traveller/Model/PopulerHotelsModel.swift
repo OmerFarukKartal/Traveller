@@ -8,14 +8,12 @@
 import Foundation
 
 // MARK: - PopularHotel
-struct PopularHotel: Decodable {
-    let id: Int
-    let name, description: String
-    let stars, rating, locationID: Int
-    let locationName, checkin, checkout, hotemlAmentities: String
-    let policy, cancellation: String
+struct PopularHotels: Decodable {
+    let id: Int?
+    let name, description: String?
+    let stars, rating, locationID: Int?
+    let locationName, checkin, checkout, hotemlAmentities: String?
+    let policy, cancellation: String?
     let ageRequirement, price, currencyID: Int
     let currencyName, image: String
 }
-
-typealias PopularHotels = [PopularHotel]

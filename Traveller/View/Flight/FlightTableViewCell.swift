@@ -1,3 +1,5 @@
+
+
 import UIKit
 import Kingfisher
 
@@ -8,7 +10,7 @@ class FlightTableViewCell: UITableViewCell {
     let durationTimeLabel = UILabel()
     let priceLabel = UILabel()
     let logoImageView = UIImageView()
-    let airlaneNameLabel = UILabel()
+    let airlineNameLabel = UILabel()
     
     let durationImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "timer"))
@@ -93,7 +95,7 @@ class FlightTableViewCell: UITableViewCell {
         stackViewRight.distribution = .fillEqually
         stackViewRight.alignment = .center
         stackViewRight.translatesAutoresizingMaskIntoConstraints = false
-        stackViewRight.addArrangedSubview(airlaneNameLabel)
+        stackViewRight.addArrangedSubview(airlineNameLabel)
         stackViewRight.addArrangedSubview(logoImageView)
         
         mainStackView.addArrangedSubview(stackViewRight)
@@ -117,7 +119,6 @@ class FlightTableViewCell: UITableViewCell {
             self.logoImageView.image = UIImage(named: "notFound")
             return
         }
-        
         if url == "notFound" {
             self.logoImageView.image = UIImage(named: "notFound")
         } else {
